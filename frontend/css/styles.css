@@ -1,74 +1,3 @@
-/* 
-:root {
-    --primary-bg: #dfdfdf;
-    --secondary-bg: #ffffff;
-    --primary-font: #ffffff;
-    --secondary-font: #ffffff;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    width: 100%;
-    height: 100vh;
-    background-color: var(--primary-bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.container{
-    width: 90%;
-    max-width: 1000px;
-    height: 90%;
-    background-color: #fff;
-    display: flex;
-}
-
-.leftdiv{
-    width: 50%;
-    height: 100%;
-}
-
-.classroom{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
-    
-}
-
-button.classes{
-    width: 200px;
-    height: 70px;
-    background-color: red;
-    border: none;
-    border-radius: 10px;  
-    cursor: pointer;
-    margin: 10px;
-}
-
-.performers{
-    width: 550px;
-    height: 700px;
-    background-color: #a35d5d;
-    border-radius: 10px;
-    margin: 10px;
-}
-
-.overall-performance{
-    width: 95%;
-    height: 500px;
-    background-color: #b94444;
-    border-radius: 10px;
-    margin: 20px 10px 0 10px;
-} */
-
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -77,14 +6,24 @@ button.classes{
 }
 
 body {
-    background-color: #f4f0ff;
+    /* background-color: #f4f0ff; */
+    background: radial-gradient(circle at 18.7% 37.8%, rgb(255, 227, 251) 0%, rgb(214, 230, 248) 90%);
     color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
 }
 
 .dashboard {
+    width: 90%;
     max-width: 1200px;
     margin: auto;
     padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    /* margin: 10px; */
 }
 
 .dashboard-header h1 {
@@ -99,12 +38,11 @@ body {
 }
 
 .card {
-    background-image: linear-gradient(to right, #B993D6 0%, #8CA6DB  51%, #B993D6  100%);
+    background-image: linear-gradient(to right, #2b5876 0%, #4e4376  51%, #2b5876  100%);
     flex: 1;
     /* background: #fff; */
     padding: 15px;
     border-radius: 8px;
-    text-align: center;
     border: none;
     cursor: pointer;
     text-decoration: none;
@@ -118,22 +56,33 @@ body {
     color: white;            
     box-shadow: 0 0 20px #eee;
     border-radius: 10px;
-    display: block;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+
 .card:hover {
-    background-position: right center; /* change the direction of the change here */
+    background-position: right center;
     color: #fff;
     text-decoration: none;
+    transform: scale(1.03);
   }
  
 
 .card h2 {
     font-size: 28px;
-    color: #4c4cff;
+    color: #dbdbf1;
+}
+
+.classes .card i.fa-graduation-cap{
+    font-size: 35px;
 }
 
 .charts {
+    /* width: 100%; */
     display: flex;
     gap: 20px;
     margin-bottom: 20px;
@@ -141,9 +90,99 @@ body {
 
 .overall-performance, .top-performer {
     flex: 1;
-    background: #e8d8d8;
     padding: 15px;
     border-radius: 8px;
+    color: #fff;
+}
+
+.overall-performance{
+    background: linear-gradient(150deg, #d122ba, #4600f1 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.progress-wrapper {
+    position: relative;
+    margin-top: 20px;
+    /* width: 100%; */
+    /* height: 150px; */
+}
+
+.progress-circle {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: conic-gradient(#798825 0deg, #e0e0e0 0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #4c8bfc;
+    position: relative;
+    transition: background 0.5s linear;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#progressText {
+    position: absolute;
+    font-size: 1.5em;
+    color: #434549;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.inner-circle {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 190px;
+    height: 190px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* z-index: -1; */
+}
+
+.top-performer{
+    background: linear-gradient(150deg, #19ac47, #4600f1 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.top-performer .toppers{
+    width: 70%;
+    height: 70px;
+    background-color: #d1d1d1;
+    color: #000000;
+    border-radius: 10px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.top-performer .toppers i{
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    font-size: 20px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 5px;
+    margin-left: 5px;
+}
+
+.top-performer .toppers .topper-name{
+    margin-left: 5px;
+    font-weight: 600;
+}
+
+.top-performer .toppers .marks p{
+    text-align: left;
 }
 
 table {

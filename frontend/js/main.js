@@ -1,30 +1,27 @@
-async function fetchData(className) {
-    const response = await fetch(`/api/students?class=${className}`);
-    const data = await response.json();
-    displayData(data);
-  }
-  
-  async function fetchToppers() {
-    const response = await fetch('/api/students/toppers');
-    const data = await response.json();
-    displayData(data);
-  }
-  
-  async function fetchLowAttendance() {
-    const response = await fetch('/api/students/low-attendance');
-    const data = await response.json();
-  }
-  
-  function displayData(data) {
-    const results = document.getElementById('results');
-    results.innerHTML = data.map(student => `
-      <div>
-        <p>Name: ${student.name}</p>
-        <p>Marks: ${student.marks}</p>
-        <p>Attendance: ${student.attendance}%</p>
-      </div>
-    `).join('');
-  }
-  
+let currentProgress = 0;
+let targetProgress = 75; // custom 
+let animationInterval;
 
-  
+function animateProgress() {
+    const progressCircle = document.getElementById('progressCircle');
+    const progressText = document.getElementById('progressText');
+
+    clearInterval(animationInterval);
+
+    animationInterval = setInterval(() => {
+        if (currentProgress < targetProgress) {
+            currentProgress++;
+        } else if (currentProgress > targetProgress) {
+            currentProgress--;
+        } else {
+            clearInterval(animationInterval);
+        }
+
+        const angle = currentProgress * 3.6;
+
+        progressCircle.style.background = `conic-gradient(#2aa4a2 ${angle}deg, #c3c3c3 0deg)`;
+        progressText.textContent = `${currentProgress}%`;
+    }, 10);
+}
+
+animateProgress();

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -15,23 +16,69 @@
         
         <section class="classes">
             <a class="card" href="class1.html">
-                <p>4MW23CS</p>
-                <h2>64</h2>
+                <i class="fa-solid fa-graduation-cap"></i>
+                <div>
+                    <p>4MW23CS</p>
+                    <h2>64</h2>
+                </div>
             </a>
             <a class="card" href="#">
-                <p>4MW22CS</p>
-                <h2>63</h2>
+                <i class="fa-solid fa-graduation-cap"></i>
+                <div>
+                    <p>4MW22CS</p>
+                    <h2>63</h2>
+                </div>
             </a>
         </section>
         
         <section class="charts">
             <div class="overall-performance">
                 <h3>Overall performance</h3>
-                <canvas id="examChart"></canvas>
+                <div class="progress-wrapper">
+                    <div class="progress-circle" id="progressCircle">
+                        <span id="progressText">0%</span>
+                    </div>
+                    <div class="inner-circle"></div>
+                </div>
             </div>
             <div class="top-performer">
                 <h3>Top performers</h3>
-                <canvas id="studentChart"></canvas>
+                <div class="toppers">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <div class="topper-name">
+                        <p>John Doe</p>
+                    </div>
+                    <div class="marks">
+                        <p>90</p>
+                    </div>
+                </div>
+                <div class="toppers">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <div class="topper-name">
+                        <p>John Doe</p>
+                    </div>
+                    <div class="marks">
+                        <p>85</p>
+                    </div>
+                </div>
+                <div class="toppers">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <div class="topper-name">
+                        <p>John Doe</p>
+                    </div>
+                    <div class="marks">
+                        <p>90</p>
+                    </div>
+                </div>
+                <div class="toppers">
+                    <i class="fa-solid fa-user-graduate"></i>
+                    <div class="topper-name">
+                        <p>John Doe</p>
+                    </div>
+                    <div class="marks">
+                        <p>90</p>
+                    </div>
+                </div>
             </div>
         </section>
         
